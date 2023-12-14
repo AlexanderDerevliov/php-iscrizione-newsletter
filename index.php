@@ -38,7 +38,7 @@ if (isset ($_POST['email'])) {
             <h3 class="text-center mt-5">Isciviti alla NewsLetter</h3>
 
             <?php if(isset ($result)) { ?>
-            <div class="alert-email">
+            <div class="alert <?php echo $result ? 'alert-success' : 'alert-danger' ?>">
                 <?php echo $result ? 'Grazie per esserti iscritto alla nostra NewsLetter' : 'errore nell\'inserimento della mail' ; ?>
             </div>
             <?php } ?>
