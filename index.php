@@ -1,5 +1,16 @@
 <!-- PHP LOGIC -->
 <?php
+if (isset ($_POST['email'])) {
+
+    $email = $_POST ['email'];
+
+    if (str_contains($email, '@') && str_contains($email, '.')) {
+        echo 'email corretta';
+    } else {
+        echo 'email errata';
+    }
+
+}
 
 ?>
 
@@ -21,16 +32,16 @@
 
 <body>
     <main>
-        <div class="container justify-content-center">
+        <div class="container ">
             <!-- title -->
             <h3 class="text-center mt-5">Isciviti alla NewsLetter</h3>
 
             <!-- form -->
-            <div class="row">
-                <div class="col-5">
+            <div class="row justify-content-center">
+                <div class="col-5 text-center mt-4 ">
                     <form action="index.php" method="POST">
                         <label for="email">Inserisci qui la tua e-mail</label>
-                        <input class="form-control mb-4" id="email" name="email" type="text">
+                        <input class="form-control mb-4" id="email" name="email" type="text" placeholder="Inserisci la tua Email">
 
                         <!-- button to send form -->
 
