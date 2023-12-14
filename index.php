@@ -10,7 +10,18 @@
 <body>
     <main>
         <div class="container">
-            <form action=""></form>
+            <!-- title -->
+            <h3>Isciviti alla NewsLetter</h3>
+
+            <!-- form -->
+            <form action="">
+                <label for="email">Inserisci qui la tua e-mail</label>
+                <input class="form-control mb-4" id="email" name="email" type="text">
+
+                <!-- button to send form -->
+
+                <button class="btn btn-primary" type="submit">Invia</button>
+            </form>
         </div>
     </main>
     
