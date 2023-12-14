@@ -1,14 +1,15 @@
 <!-- PHP LOGIC -->
 <?php
+
+
+include_once  __DIR__  . '/function.php';
+
+
 if (isset ($_POST['email'])) {
 
     $email = $_POST ['email'];
-
-    if (str_contains($email, '@') && str_contains($email, '.')) {
-        echo 'email corretta';
-    } else {
-        echo 'email errata';
-    }
+    
+    $result = controlEmail( $email);
 
 }
 
@@ -35,6 +36,12 @@ if (isset ($_POST['email'])) {
         <div class="container ">
             <!-- title -->
             <h3 class="text-center mt-5">Isciviti alla NewsLetter</h3>
+
+            <?php if(isset ($result)) { ?>
+            <div class="alert-email">
+                <?php echo $result ? 'Grazie per esserti iscritto alla nostra NewsLetter' : 'errore nell\'inserimento della mail' ; ?>
+            </div>
+            <?php } ?>
 
             <!-- form -->
             <div class="row justify-content-center">
